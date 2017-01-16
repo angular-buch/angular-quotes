@@ -12,11 +12,12 @@ export class QuotesService {
 
   constructor(private http: Http) { }
 
-  getAll(): Observable<Array<IQuote>> {
+  get(index: number): Observable<IQuote> {
     return this.http
       .get(this.api)
       .retry(3)
       .map(response => response.json())
-      .map(rawData => rawData.quotes);
+      .map(rawData => rawData.quotes)
+      .map(quotes => quotes[index]);
   }
 }

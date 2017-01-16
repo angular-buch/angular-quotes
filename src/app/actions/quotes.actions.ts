@@ -6,17 +6,22 @@ import { QuotesService } from '../shared/quotes.service';
 
 @Injectable()
 export class QuotesActions {
-  static LOAD = 'LOAD';
+  static LOAD_PENDING = 'LOAD_PENDING';
+  static LOAD_COMPLETED = 'LOAD_COMPLETED';
   static INCREMENT_INDEX = 'INCREMENT_INDEX';
   static RESET_INDEX = 'RESET_INDEX';
 
   constructor(private ngRedux: NgRedux<IAppState>, private api: QuotesService) {}
 
   load() {
-    this.api.getAll().subscribe((quotes) => {
+    this.ngRedux.dispatch({
+      type: QuotesActions.LOAD_PENDING
+    });
+
+    this.api.get(0).subscribe((quote) => {
       this.ngRedux.dispatch({
-        type: QuotesActions.LOAD,
-        payload: quotes
+        type: QuotesActions.LOAD_COMPLETED,
+        payload: quote
       });
     });
   }

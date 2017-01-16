@@ -7,8 +7,9 @@ import { IQuotesRecord, IQuotes } from './quotes.types';
 
 
 export const QuotesFactory = makeTypedFactory<IQuotes, IQuotesRecord>({
-  lastShownIndex: 0,
-  quotes: []
+  index: 0,
+  quote: null,
+  isLoading: false
 });
 
 const INITIAL_STATE = QuotesFactory();
@@ -17,14 +18,22 @@ export function quotesReducer(state: IQuotesRecord = INITIAL_STATE, action: IAct
 
   switch (action.type) {
 
-    case QuotesActions.LOAD:
-      return state.set('quotes', action.payload);
+    case QuotesActions.LOAD_PENDING:
+      return state.merge({
+        isLoading: true,
+      });
+
+    case QuotesActions.LOAD_COMPLETED:
+      return state.merge({
+        quote: action.payload,
+        isLoading: false
+      });
 
     case QuotesActions.INCREMENT_INDEX:
-      return state.update('lastShownIndex', (value) => value + 1);
+      return state.update('index', (value) => value + 1);
 
     case QuotesActions.RESET_INDEX:
-      return state.update('lastShownIndex', (value) => 0);
+      return state.update('index', (value) => 0);
 
     default:
       return state;
