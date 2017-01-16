@@ -1,0 +1,54 @@
+{
+  "quotes": [
+    {
+      "text": "Angular 1 is a framework. Angular 2 is a platform.",
+      "author": "Brad Green",
+      "source": "https://auth0.com/blog/ng-conf-summary-day-1/"
+    },
+    {
+      "text": "React is a scalpel, Angular is an operating room.",
+      "author": "Corinna Cohn",
+      "source": "https://twitter.com/corinna_cohn/status/728245125848039424"
+    },
+    {
+      "text": "I really, really like using an NgModule to pre-configure other modules like the Router and AngularFire2.",
+      "author": "David East",
+      "source": "https://twitter.com/_davideast/status/817067267074592768"
+    },
+    {
+      "text": "For me Angular is much much more than some code, apis or syntax. It's the \"more\" we wanted to preserve, even if it means short term issues.",
+      "author": "Igor Minar",
+      "source": "https://twitter.com/IgorMinar/status/807572635945226241"
+    },
+    {
+      "text": "AoT in Angular effectively stops the possibility of script injections. Oh, and it's wicked fast.",
+      "author": "Philippe De Ryck",
+      "source": "https://twitter.com/PascalPrecht/status/807158158837817344"
+    },
+    {
+      "text": "To be or not to be DOM. That's the question.",
+      "author": "Igor Minar",
+      "source": "https://twitter.com/dominiktilp/status/791543826758438912"
+    },
+    {
+      "text": "Nietzsche on JavaScript: There is always some madness in JavaScript. But there is also always some reason in madness.",
+      "author": "Victor Savkin",
+      "source": "https://twitter.com/victorsavkin/status/779380490952290304"
+    },
+    {
+      "text": "2016: the year that setting up the tooling for a project takes longer than coding the actual product.",
+      "author": "Todd Motto",
+      "source": "https://twitter.com/toddmotto/status/712284758215102465"
+    },
+    {
+      "text": "It's just \"Angular\"",
+      "author": "Igor Minar",
+      "source": "https://www.youtube.com/watch?v=aJIMoLgqU_o"
+    },
+    {
+      "text": "Managing state transitions is one of the hardest parts of building applications.",
+      "author": "Victor Savkin",
+      "source": "https://vsavkin.com/angular-2-router-d9e30599f9ea"
+    }
+  ]
+}
