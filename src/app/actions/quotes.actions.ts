@@ -13,12 +13,14 @@ export class QuotesActions {
 
   constructor(private ngRedux: NgRedux<IAppState>, private api: QuotesService) {}
 
-  load() {
+  private load() {
     this.ngRedux.dispatch({
       type: QuotesActions.LOAD_PENDING
     });
 
-    this.api.get(0).subscribe((quote) => {
+    const index = this.ngRedux.getState().quotes.index;
+
+    this.api.get(index).subscribe((quote) => {
       this.ngRedux.dispatch({
         type: QuotesActions.LOAD_COMPLETED,
         payload: quote
@@ -26,11 +28,13 @@ export class QuotesActions {
     });
   }
 
-  incrementIndex() {
+  loadNext() {
     this.ngRedux.dispatch({ type: QuotesActions.INCREMENT_INDEX });
+    this.load();
   }
 
-  resetIndex() {
+  reset() {
     this.ngRedux.dispatch({ type: QuotesActions.RESET_INDEX });
+    this.load();
   }
 }

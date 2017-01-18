@@ -2,7 +2,6 @@ import { makeTypedFactory } from 'typed-immutable-record';
 
 import { IActionPayload } from '../actions/actionPayload';
 import { QuotesActions } from '../actions/quotes.actions';
-import { IQuote } from './../shared/quote';
 import { IQuotesRecord, IQuotes } from './quotes.types';
 
 
@@ -14,7 +13,7 @@ export const QuotesFactory = makeTypedFactory<IQuotes, IQuotesRecord>({
 
 const INITIAL_STATE = QuotesFactory();
 
-export function quotesReducer(state: IQuotesRecord = INITIAL_STATE, action: IActionPayload<IQuote>): IQuotesRecord {
+export function quotesReducer(state: IQuotesRecord = INITIAL_STATE, action: IActionPayload<IQuotes>): IQuotesRecord {
 
   switch (action.type) {
 

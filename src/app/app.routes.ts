@@ -1,6 +1,6 @@
 import { Routes, RouterModule } from '@angular/router';
-import { QuotesPageComponent } from './pages/quotes-page.component';
-import { AboutPageComponent } from './pages/about-page.component';
+import { AboutPageComponent } from './components/about-page.component';
+import { QuotesPageComponent } from './components/quotes-page.component';
 
 const appRoutes: Routes = [
   { path: '', component: QuotesPageComponent,  pathMatch: 'full' },
