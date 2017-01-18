@@ -9,4 +9,7 @@ if (environment.production) {
   enableProdMode();
 }
 
+// uncomment this while debugging
+require('zone.js/dist/long-stack-trace-zone');
+
 platformBrowserDynamic().bootstrapModule(AppModule);
