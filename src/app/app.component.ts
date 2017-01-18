@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { DevToolsExtension, NgRedux, select } from 'ng2-redux';
+import {NgReduxRouter} from 'ng2-redux-router';
 
 import { middleware, enhancers } from './app.extensibility';
 import { IAppState, rootReducer } from '../app/reducers';
@@ -15,6 +16,7 @@ export class AppComponent {
   constructor(
     private devTools: DevToolsExtension,
     private ngRedux: NgRedux<IAppState>,
+    private ngReduxRouter: NgReduxRouter
   ) {
 
     ngRedux.configureStore(
@@ -24,5 +26,7 @@ export class AppComponent {
       devTools.isEnabled() ?
         [...enhancers, devTools.enhancer()] :
         enhancers);
+
+    ngReduxRouter.initialize();
   }
 }
