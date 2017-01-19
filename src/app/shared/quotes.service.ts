@@ -8,7 +8,7 @@ import { IQuote } from './quote';
 
 @Injectable()
 export class QuotesService {
-  private api: string = '/assets/quotes.json';
+  private api: string = 'https://angular-buch.com/angular-quotes/assets/quotes.json';
 
   constructor(private http: Http) { }
 
