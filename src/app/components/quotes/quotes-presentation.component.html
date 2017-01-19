@@ -1,10 +1,11 @@
+<small>{{ quotes.index + 1 }}.</small>
 <blockquote>
 
-  {{ quotes.quote?.text }}
+  {{ quotes.quote.text }}
 
-<footer>
-  <cite><a href="{{ quotes.quote?.source }}">{{ quotes.quote?.author }}</a></cite>
-</footer>
+  <footer>
+    <cite><a href="{{ quotes.quote.source }}">{{ quotes.quote.author }}</a></cite>
+  </footer>
 
 </blockquote>
 
@@ -15,4 +16,11 @@
 
 <span class="glyphicon" [ngClass]="{
   'glyphicon-refresh spinning': quotes.isLoading
-}"></span>
+}">
+</span>
+
+<hr>
+<pre style="text-align: left">
+  DEBUG
+{{ quotes | json }}
+</pre>

@@ -13,7 +13,6 @@ export class QuotesPresentationComponent implements OnInit {
   @Output() loadNext = new EventEmitter<void>();
   @Output() reset = new EventEmitter<void>();
 
-
   ngOnInit() {
     if (!this.quotes.quote) {
       this.loadNext.emit();

@@ -7,7 +7,11 @@ import { IQuotesRecord, IQuotes } from './quotes.types';
 
 export const QuotesFactory = makeTypedFactory<IQuotes, IQuotesRecord>({
   index: 0,
-  quote: null,
+  quote: {
+    text: '',
+    author: '',
+    source: ''
+  },
   isLoading: false
 });
 
