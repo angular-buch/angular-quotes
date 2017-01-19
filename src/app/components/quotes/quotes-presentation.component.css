@@ -1,0 +1,26 @@
+:host {
+  text-align: center;
+}
+
+blockquote {
+  width: 50%;
+  border-left: none;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.glyphicon.spinning {
+  animation: spin 2s infinite linear;
+  -webkit-animation: spin2 2s infinite linear;
+}
+
+@keyframes spin {
+  from { transform: scale(1) rotate(0deg); }
+  to { transform: scale(1) rotate(360deg); }
+}
+
+@-webkit-keyframes spin2 {
+  from { -webkit-transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); }
+}

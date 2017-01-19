@@ -1,0 +1,18 @@
+<blockquote>
+
+  {{ quotes.quote?.text }}
+
+<footer>
+  <cite><a href="{{ quotes.quote?.source }}">{{ quotes.quote?.author }}</a></cite>
+</footer>
+
+</blockquote>
+
+
+<button class="btn btn-active" (click)="reset.emit()">Reset</button>
+<button class="btn btn-active" (click)="loadNext.emit()">Load Next</button>
+
+
+<span class="glyphicon" [ngClass]="{
+  'glyphicon-refresh spinning': quotes.isLoading
+}"></span>
