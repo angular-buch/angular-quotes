@@ -201,7 +201,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var QuotesService = (function () {
     function QuotesService(http) {
         this.http = http;
-        this.api = '/assets/quotes.json';
+        this.api = 'https://angular-buch.com/angular-quotes/assets/quotes.json';
     }
     QuotesService.prototype.get = function (index) {
         return this.http
