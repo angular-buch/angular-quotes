@@ -1,6 +1,8 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, OnInit } from '@angular/core';
+
 import { quotesReducer } from '../../reducers/quotes.reducer';
-import { IQuotes } from './../../reducers/quotes.types';
+import { IMeta } from './../../shared/meta';
+import { IQuote } from './../../shared/quote';
 
 @Component({
   selector: 'app-quotes-presentation',
@@ -9,12 +11,14 @@ import { IQuotes } from './../../reducers/quotes.types';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class QuotesPresentationComponent implements OnInit {
-  @Input() quotes: IQuotes;
+  @Input() quote: IQuote;
+  @Input() meta: IMeta;
+
   @Output() loadNext = new EventEmitter<void>();
   @Output() reset = new EventEmitter<void>();
 
   ngOnInit() {
-    if (!this.quotes.quote) {
+    if (!this.meta.total) {
       this.loadNext.emit();
     }
   }

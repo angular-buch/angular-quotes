@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/retry';
 
-import { IQuote } from './quote';
+import { IQuotesApiResponse } from './quotes-api-response';
 
 @Injectable()
 export class QuotesService {
@@ -12,12 +12,16 @@ export class QuotesService {
 
   constructor(private http: Http) { }
 
-  get(index: number): Observable<IQuote> {
+  get(index: number): Observable<IQuotesApiResponse> {
     return this.http
       .get(this.api)
       .retry(3)
       .map(response => response.json())
-      .map(rawData => rawData.quotes)
-      .map(quotes => quotes[index]);
-  }
+      .map((rawData) => {
+        return {
+          total: rawData.quotes.lenght,
+          quote: rawData.quotes[index]
+        };
+      });
+    }
 }

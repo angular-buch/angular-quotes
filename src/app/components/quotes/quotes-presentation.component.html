@@ -1,26 +1,25 @@
-<small>{{ quotes.index + 1 }}.</small>
+<small>{{ meta.index + 1 }}.</small>
 <blockquote>
 
-  {{ quotes.quote.text }}
+  {{ quote.text }}
 
   <footer>
-    <cite><a href="{{ quotes.quote.source }}">{{ quotes.quote.author }}</a></cite>
+    <cite><a href="{{ quote.source }}">{{ quote.author }}</a></cite>
   </footer>
-
 </blockquote>
 
 
 <button class="btn btn-active" (click)="reset.emit()">Reset</button>
 <button class="btn btn-active" (click)="loadNext.emit()">Load Next</button>
 
-
 <span class="glyphicon" [ngClass]="{
-  'glyphicon-refresh spinning': quotes.isLoading
+  'glyphicon-refresh spinning': quote.isLoading
 }">
 </span>
 
 <hr>
 <pre style="text-align: left">
   DEBUG
-{{ quotes | json }}
+{{ meta | json }}
+{{ quote | json }}
 </pre>

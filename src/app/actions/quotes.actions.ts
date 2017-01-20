@@ -18,12 +18,12 @@ export class QuotesActions {
       type: QuotesActions.LOAD_PENDING
     });
 
-    const index = this.ngRedux.getState().quotes.index;
+    const index = this.ngRedux.getState().quotes.meta.index;
 
-    this.api.get(index).subscribe((quote) => {
+    this.api.get(index).subscribe((apiResponse) => {
       this.ngRedux.dispatch({
         type: QuotesActions.LOAD_COMPLETED,
-        payload: quote
+        payload: apiResponse
       });
     });
   }

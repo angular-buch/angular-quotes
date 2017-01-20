@@ -2,23 +2,29 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { select } from 'ng2-redux';
 
+import { IAppState } from './../reducers/index';
 import { QuotesActions } from '../actions/quotes.actions';
-import { IQuotes } from '../reducers/quotes.types';
+import { IMeta } from './../shared/meta';
+import { IQuote } from './../shared/quote';
 
 @Component({
   selector: 'app-quotes-page',
   template: `
     <app-quotes-presentation
-      [quotes]="quotes$ | async"
+      [meta]="meta$ | async"
+      [quote]="quote$ | async"
       (loadNext)="actions.loadNext()"
       (reset)="actions.reset()"
     ></app-quotes-presentation>
   `
 })
 export class QuotesPageComponent   {
-  @select() public quotes$: Observable<IQuotes>;
+
+  @select((state: IAppState) => state.quotes.meta)
+  public meta$: Observable<IMeta>;
+
+  @select((state: IAppState) => state.quotes.quote)
+  public quote$: Observable<IQuote>;
 
   constructor(public actions: QuotesActions) {}
-
-
 }
