@@ -1,6 +1,8 @@
-import { IQuote } from './quote';
-
 export class IQuotesApiResponse {
   total: number;
-  quote: IQuote;
+  quote: {
+    text: string;
+    author: string;
+    source: string;
+  };
 }

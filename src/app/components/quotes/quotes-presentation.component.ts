@@ -1,8 +1,7 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, OnInit } from '@angular/core';
 
+import { IQuote, IMeta } from '../../reducers/quotes.types';
 import { quotesReducer } from '../../reducers/quotes.reducer';
-import { IMeta } from './../../shared/meta';
-import { IQuote } from './../../shared/quote';
 
 @Component({
   selector: 'app-quotes-presentation',

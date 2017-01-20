@@ -2,37 +2,22 @@ import { makeTypedFactory } from 'typed-immutable-record';
 
 import { IActionPayload } from '../actions/actionPayload';
 import { QuotesActions } from '../actions/quotes.actions';
-import { IQuotesRecord, IQuotes } from './quotes.types';
-import { IQuotesApiResponse } from './../shared/quotes-api-response';
+import { IMeta, IQuote, IQuotes, IMetaRecord, IQuoteRecord, IQuotesRecord } from './quotes.types';
+import { INITIAL_QUOTES_STATE } from './quotes.factory';
+import { IQuotesApiResponse } from '../shared/quotes-api-response';
 
+export function quotesReducer(state: IQuotesRecord = INITIAL_QUOTES_STATE, action: IActionPayload<IQuotesApiResponse>): IQuotesRecord {
 
-export const QuotesFactory = makeTypedFactory<IQuotes, IQuotesRecord>({
-  meta: {
-    index: 0,
-    total: 0,
-    isLoading: false
-  },
-  quote: {
-    text: '',
-    author: '',
-    source: ''
-  }
-});
-
-const INITIAL_STATE = QuotesFactory();
-
-export function quotesReducer(state: IQuotesRecord = INITIAL_STATE, action: IActionPayload<IQuotesApiResponse>): IQuotesRecord {
-return state;
-  /*switch (action.type) {
+  switch (action.type) {
 
     case QuotesActions.LOAD_PENDING:
-      return state.mergeDeep({ meta: { isLoading: true } });
+      return state.updateIn(['meta', 'isLoading'], (oldState) => true);
 
     case QuotesActions.LOAD_COMPLETED:
-      return state.update((oldValue) => {
+      return state.update((oldState: IQuotes) => {
         return {
           meta: {
-            index: oldValue.meta.index,
+            index: oldState.meta.index,
             total: action.payload.total,
             isLoading: false
           },
@@ -41,12 +26,18 @@ return state;
       });
 
     case QuotesActions.INCREMENT_INDEX:
-      return state.updateIn(['meta', 'index'], (value) => value + 1);
+      return state.update('meta', (oldState: IMeta) => {
+        return {
+          index: (oldState.index + 1 === oldState.total) ? 0 : oldState.index + 1,
+          total: oldState.total,
+          isLoading: oldState.isLoading
+        };
+      });
 
     case QuotesActions.RESET_INDEX:
-      return state.updateIn(['meta', 'index'], (value) => 0);
+      return state.updateIn(['meta', 'index'], (oldState) => 0);
 
     default:
       return state;
-  }*/
+  }
 }
