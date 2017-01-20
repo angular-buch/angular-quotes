@@ -19,7 +19,7 @@ export class QuotesService {
       .map(response => response.json())
       .map((rawData) => {
         return {
-          total: rawData.quotes.lenght,
+          total: rawData.quotes.length,
           quote: rawData.quotes[index]
         };
       });

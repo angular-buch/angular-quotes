@@ -12,6 +12,7 @@ import { IMeta, IQuote } from './../reducers/quotes.types';
     <app-quotes-presentation
       [meta]="meta$ | async"
       [quote]="quote$ | async"
+      (loadFirst)="actions.loadFirst()"
       (loadNext)="actions.loadNext()"
       (reset)="actions.reset()"
     ></app-quotes-presentation>

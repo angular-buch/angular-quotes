@@ -14,11 +14,12 @@ export class QuotesPresentationComponent implements OnInit {
   @Input() meta: IMeta;
 
   @Output() loadNext = new EventEmitter<void>();
+  @Output() loadFirst = new EventEmitter<void>();
   @Output() reset = new EventEmitter<void>();
 
   ngOnInit() {
     if (!this.meta.total) {
-      this.loadNext.emit();
+      this.loadFirst.emit();
     }
   }
 }

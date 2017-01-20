@@ -28,6 +28,10 @@ export class QuotesActions {
     });
   }
 
+  loadFirst() {
+    this.load();
+  }
+
   loadNext() {
     this.ngRedux.dispatch({ type: QuotesActions.INCREMENT_INDEX });
     this.load();

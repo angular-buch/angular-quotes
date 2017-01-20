@@ -15,19 +15,19 @@ export function quotesReducer(state: IQuotesRecord = INITIAL_QUOTES_STATE, actio
 
     case QuotesActions.LOAD_COMPLETED:
       return state.update((oldState: IQuotes) => QuotesFactory({
-        meta: {
-          index: oldState.meta.index,
-          total: action.payload.total,
-          isLoading: false
-        },
-        quote: action.payload.quote
+          meta: {
+            index: oldState.meta.index,
+            total: action.payload.total,
+            isLoading: false
+          },
+          quote: action.payload.quote
       }));
 
     case QuotesActions.INCREMENT_INDEX:
       return state.update('meta', (oldState: IMeta) => MetaFactory({
-        index: (oldState.index + 1 === oldState.total) ? 0 : oldState.index + 1,
-        total: oldState.total,
-        isLoading: oldState.isLoading
+          index: (oldState.index + 1 === oldState.total) ? 0 : oldState.index + 1,
+          total: oldState.total,
+          isLoading: oldState.isLoading
       }));
 
     case QuotesActions.RESET_INDEX:
