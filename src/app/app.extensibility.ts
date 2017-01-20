@@ -6,6 +6,9 @@ import { IAppState, rootReducer, deimmutify, reimmutify } from './reducers';
 import { environment } from '../environments/environment';
 
 export let middleware = [];
+
+// this should not be activated during development, because it causes big confusion! :-)
+/*
 export let enhancers = [
   persistState(
     '',
@@ -15,6 +18,9 @@ export let enhancers = [
       deserialize: state => reimmutify(JSON.parse(state)),
     })
 ];
+*/
+
+export let enhancers = [];
 
 if (!environment.production) {
   middleware.push(
