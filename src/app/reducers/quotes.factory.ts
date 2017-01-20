@@ -8,13 +8,13 @@ import {
   IQuotesRecord
 } from './quotes.types';
 
-const MetaFactory = makeTypedFactory<IMeta, IMetaRecord>({
+export const MetaFactory = makeTypedFactory<IMeta, IMetaRecord>({
   index: 0,
   total: 0,
   isLoading: false
 });
 
-const QuoteFactory = makeTypedFactory<IQuote, IQuoteRecord>({
+export const QuoteFactory = makeTypedFactory<IQuote, IQuoteRecord>({
   text: '',
   author: '',
   source: ''

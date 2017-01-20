@@ -1,4 +1,4 @@
-<small>{{ meta.index + 1 }}.</small>
+{{ meta.index + 1 }}.
 <blockquote>
 
   {{ quote.text }}
@@ -16,10 +16,3 @@
   'glyphicon-refresh spinning': quote.isLoading
 }">
 </span>
-
-<hr>
-<pre style="text-align: left">
-  DEBUG
-{{ meta | json }}
-{{ quote | json }}
-</pre>

@@ -4,8 +4,7 @@ import { select } from 'ng2-redux';
 
 import { IAppState } from './../reducers/index';
 import { QuotesActions } from '../actions/quotes.actions';
-import { IMeta } from './../shared/meta';
-import { IQuote } from './../shared/quote';
+import { IMeta, IQuote } from './../reducers/quotes.types';
 
 @Component({
   selector: 'app-quotes-page',

@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'ng2-redux-router';
-import { quotesReducer, QuotesFactory } from './quotes.reducer';
+import { quotesReducer } from './quotes.reducer';
 import { IQuotes } from './quotes.types';
+import { QuotesFactory } from './quotes.factory';
 
 export interface IAppState {
   quotes?: IQuotes;
