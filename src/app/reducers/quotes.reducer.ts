@@ -3,7 +3,7 @@ import { makeTypedFactory } from 'typed-immutable-record';
 import { IActionPayload } from '../actions/actionPayload';
 import { QuotesActions } from '../actions/quotes.actions';
 import { IMeta, IQuote, IQuotes, IMetaRecord, IQuoteRecord, IQuotesRecord } from './quotes.types';
-import { INITIAL_QUOTES_STATE, QuotesFactory, MetaFactory } from './quotes.factory';
+import { INITIAL_QUOTES_STATE, QuotesFactory, MetaFactory, QuoteFactory } from './quotes.factory';
 import { IQuotesApiResponse } from '../shared/quotes-api-response';
 
 export function quotesReducer(state: IQuotesRecord = INITIAL_QUOTES_STATE, action: IActionPayload<IQuotesApiResponse>): IQuotesRecord {
@@ -14,14 +14,11 @@ export function quotesReducer(state: IQuotesRecord = INITIAL_QUOTES_STATE, actio
       return state.updateIn(['meta', 'isLoading'], (oldState) => true);
 
     case QuotesActions.LOAD_COMPLETED:
-      return state.update((oldState: IQuotes) => QuotesFactory({
-          meta: {
-            index: oldState.meta.index,
-            total: action.payload.total,
-            isLoading: false
-          },
-          quote: action.payload.quote
-      }));
+      return state.update('meta', (oldState: IMeta) => MetaFactory({
+          index: oldState.index,
+          total: action.payload.total,
+          isLoading: false
+      })).update('quote', (oldState: IQuote) => QuoteFactory(action.payload.quote));
 
     case QuotesActions.INCREMENT_INDEX:
       return state.update('meta', (oldState: IMeta) => MetaFactory({
