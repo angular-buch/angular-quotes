@@ -9,8 +9,8 @@
 </blockquote>
 
 
-<button class="btn btn-active" (click)="reset.emit()">Reset</button>
-<button class="btn btn-active" (click)="loadNext.emit()">Load Next</button>
+<button class="btn btn-danger" (click)="reset.emit()">Reset</button>
+<button class="btn btn-danger" (click)="loadNext.emit()">Load Next</button>
 
 <span class="glyphicon" [ngClass]="{
   'glyphicon-refresh spinning': meta.isLoading
