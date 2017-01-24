@@ -3,7 +3,7 @@ import { TypedRecord } from 'typed-immutable-record';
 export interface IMeta {
   index: number;
   total: number;
-  isLoading: false;
+  isLoading: boolean;
 }
 
 export interface IQuote {

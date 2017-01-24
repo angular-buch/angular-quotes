@@ -7,7 +7,14 @@ blockquote {
   border-left: none;
   margin: auto;
   margin-top: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
+  min-height: 125px;
+}
+
+span.glyphicon {
+  margin-top: 10px;
+  display: block;
+  font-size: 1.2em;
 }
 
 .glyphicon.spinning {
