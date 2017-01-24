@@ -678,7 +678,7 @@ function quotesReducer(state, action) {
 /***/ 775:
 /***/ function(module, exports) {
 
-module.exports = "body { padding-top: 70px; }\r\n\r\ndiv.container {\r\n  text-align: center;\r\n}\r\n\r\nsvg {\r\n  display: block;\r\n  margin: auto;\r\n  padding-right: 30px;\r\n}\r\n"
+module.exports = "body { padding-top: 70px; }\r\n\r\ndiv.container {\r\n  text-align: center;\r\n}\r\n\r\nsvg {\r\n  display: block;\r\n  margin: auto;\r\n  padding-right: 30px;\r\n}\r\n\r\n.btn-danger {\r\n  background-color: #DD0031;\r\n}\r\n\r\n/* fork on github badge */\r\n\r\n#forkongithub * {\r\n  box-sizing: content-box;\r\n}\r\n\r\n#forkongithub a {\r\n  background: #C3002F;\r\n  color: #fff;\r\n  text-decoration: none;\r\n  font-family: arial,sans-serif;\r\n  text-align: center;\r\n  font-weight: bold;\r\n  padding: 10px 40px;\r\n  font-size: 16px;\r\n  line-height: 20px;\r\n  position: relative;\r\n  -webkit-transition: 0.5s;\r\n  transition: 0.5s;\r\n}\r\n\r\n#forkongithub a:hover {\r\n  background: #900000;\r\n  color: #fff;\r\n}\r\n\r\n#forkongithub a::before,\r\n#forkongithub a::after {\r\n  content: \"\";\r\n  width: 100%;\r\n  display: block;\r\n  position: absolute;\r\n  top: 1px;\r\n  left: 0;\r\n  height: 1px;\r\n  background: #fff;\r\n}\r\n\r\n#forkongithub a::after {\r\n  bottom: 1px;\r\n  top: auto;\r\n}\r\n\r\n@media screen and (min-width:800px) {\r\n  #forkongithub {\r\n    position: fixed;\r\n    display: block;\r\n    top: 0;\r\n    right: 0;\r\n    width: 200px;\r\n    overflow: hidden;\r\n    height: 200px;\r\n    z-index: 9999;\r\n  }\r\n\r\n  #forkongithub a {\r\n    width: 200px;\r\n    position: absolute;\r\n    top: 60px;\r\n    right: -60px;\r\n    transform: rotate(45deg);\r\n    -webkit-transform: rotate(45deg);\r\n    -ms-transform: rotate(45deg);\r\n    -moz-transform: rotate(45deg);\r\n    -o-transform: rotate(45deg);\r\n    box-shadow: 4px 4px 10px rgba(0,0,0,0.8);\r\n  };\r\n}\r\n"
 
 /***/ },
 
@@ -699,7 +699,7 @@ module.exports = "<nav class=\"navbar navbar-inverse navbar-fixed-top\">\n  <div
 /***/ 778:
 /***/ function(module, exports) {
 
-module.exports = "{{ meta.index + 1 }}.\r\n<blockquote>\r\n\r\n  {{ quote.text }}\r\n\r\n  <footer>\r\n    <cite><a href=\"{{ quote.source }}\">{{ quote.author }}</a></cite>\r\n  </footer>\r\n</blockquote>\r\n\r\n\r\n<button class=\"btn btn-active\" (click)=\"reset.emit()\">Reset</button>\r\n<button class=\"btn btn-active\" (click)=\"loadNext.emit()\">Load Next</button>\r\n\r\n<span class=\"glyphicon\" [ngClass]=\"{\r\n  'glyphicon-refresh spinning': meta.isLoading\r\n}\">\r\n</span>\r\n"
+module.exports = "{{ meta.index + 1 }}.\r\n<blockquote>\r\n\r\n  {{ quote.text }}\r\n\r\n  <footer>\r\n    <cite><a href=\"{{ quote.source }}\">{{ quote.author }}</a></cite>\r\n  </footer>\r\n</blockquote>\r\n\r\n\r\n<button class=\"btn btn-danger\" (click)=\"reset.emit()\">Reset</button>\r\n<button class=\"btn btn-danger\" (click)=\"loadNext.emit()\">Load Next</button>\r\n\r\n<span class=\"glyphicon\" [ngClass]=\"{\r\n  'glyphicon-refresh spinning': meta.isLoading\r\n}\">\r\n</span>\r\n"
 
 /***/ },
 
