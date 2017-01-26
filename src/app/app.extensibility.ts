@@ -1,32 +1,26 @@
-// no ES6 import available
-const createLogger = require('redux-logger');
-const persistState = require('redux-localstorage');
+import createLogger from 'redux-logger';
+import persistState from 'redux-localstorage';
 
-import { IAppState, rootReducer, deimmutify, reimmutify } from './reducers';
 import { environment } from '../environments/environment';
+export let enhancers = [];
 
-export let middleware = [];
-
-// this should not be activated during development, because it causes big confusion! :-)
+// this should be activated with care, because it causes big confusion! :-)
 /*
-export let enhancers = [
+enhancers.push(
   persistState(
     '',
     {
-      key: 'angular-quotes',
-      serialize: store => JSON.stringify(deimmutify(store)),
-      deserialize: state => reimmutify(JSON.parse(state)),
+      key: 'angular-quotes'
     })
-];
+);
 */
 
-export let enhancers = [];
+export let middleware = [];
 
 if (!environment.production) {
   middleware.push(
     createLogger({
-    level: 'info',
-    collapsed: true,
-    stateTransformer: deimmutify,
-  }));
+      level: 'info',
+      collapsed: true
+    }));
 }

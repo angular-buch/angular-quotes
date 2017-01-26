@@ -2,8 +2,9 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { DevToolsExtension, NgRedux, select } from 'ng2-redux';
 import {NgReduxRouter} from 'ng2-redux-router';
 
+import { rootReducer } from './reducers/rootReducer';
+import { IAppState } from './reducers/types';
 import { middleware, enhancers } from './app.extensibility';
-import { IAppState, rootReducer } from '../app/reducers';
 
 @Component({
   selector: 'app-root',

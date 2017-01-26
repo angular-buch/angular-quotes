@@ -2,9 +2,8 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { select } from 'ng2-redux';
 
-import { IAppState } from './../reducers/index';
 import { QuotesActions } from '../actions/quotes.actions';
-import { IMeta, IQuote } from './../reducers/quotes.types';
+import { IAppState, IMeta, IQuote } from './../reducers/types';
 
 @Component({
   selector: 'app-quotes-page',

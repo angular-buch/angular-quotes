@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, OnInit } from '@angular/core';
 
-import { IQuote, IMeta } from '../../reducers/quotes.types';
+import { IQuote, IMeta } from '../../reducers/types';
 import { quotesReducer } from '../../reducers/quotes.reducer';
 
 @Component({

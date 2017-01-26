@@ -1,23 +1,21 @@
+import * as si from 'seamless-immutable';
+
 import { IQuotesApiResponse } from './../shared/quotes-api-response';
 import { QuotesActions } from './../actions/quotes.actions';
 import { quotesReducer } from './quotes.reducer';
-import { IQuotesRecord } from './quotes.types';
-import { Iterable } from 'immutable';
+import { Quotes } from './types';
 
 describe('Quotes Reducer', () => {
-  let initState: IQuotesRecord;
-  let nextState: IQuotesRecord;
+  let initState: Quotes;
+  let nextState: Quotes;
 
   beforeEach(() => {
     initState = quotesReducer(undefined, { type: 'TEST_INIT'});
     nextState = undefined;
   });
 
-  // very important: verify that all nested objects are still under control of immutable.js!
   afterEach(() => {
-    expect(Iterable.isIterable(nextState)).toBe(true);
-    expect(Iterable.isIterable(nextState.meta)).toBe(true);
-    expect(Iterable.isIterable(nextState.quote)).toBe(true);
+    expect(si.isImmutable(nextState)).toBe(true);
   });
 
   it('should have an immutable initial state', () => {
