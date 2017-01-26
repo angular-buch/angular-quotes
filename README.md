@@ -1,24 +1,22 @@
 # AngularQuotes
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.25.5.
+[![Screenshot](screenshot.png)](https://angular-buch.com/angular-quotes/)
+
+This is just a little demo to get used with the Angular bindings for [Redux](https://github.com/reactjs/redux) ([ng2-redux](https://github.com/angular-redux/ng2-redux)).
 
 # seamless-immutable library instead of immutable.js
 
-This version uses seamless-immutable with type definitions.
+This version uses [seamless-immutable](https://github.com/rtfeldman/seamless-immutable) with type definitions.
 Seamless-immutable offers better JS interoperability and compatiblity with TypeScript.
 It ensures immutability all the way dow, see this issue on [Github](https://github.com/facebook/immutable-js/issues/473),
 
 So you can rely on immutable things being actually immutable.
 It does not allow any mutable objects inside -- which would break things on strange places.
 
-
+### See the [branch immutable.js](https://github.com/angular-buch/angular-quotes/tree/immutable.js) for an alternative implementation.
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
 
 ## Build
 
@@ -27,17 +25,4 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Deploying to GitHub Pages
-
-Run `ng github-pages:deploy` to deploy to GitHub Pages.
-
-## Further help
-
-To get more help on the `angular-cli` use `ng help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
