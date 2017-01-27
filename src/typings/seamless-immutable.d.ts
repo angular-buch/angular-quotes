@@ -37,6 +37,7 @@ declare namespace SeamlessImmutable {
     asMutable(): T;
     asMutable(opts: AsMutableOptions): T;
 
+    /* HACK OLD:
     merge(part: any, config?: MergeConfig): ImmutableObject<T>;
 
     update(property: string, updaterFunction: (value: any, ...additionalParamters: any[]) => any, ...additionalArguments: any[]): ImmutableObject<T>;
@@ -45,6 +46,17 @@ declare namespace SeamlessImmutable {
     without(property: string): ImmutableObject<any>;
     without(...properties: string[]): ImmutableObject<any>;
     without(filter: (value: any, key: string) => boolean): ImmutableObject<any>;
+    */
+
+    // NEW (all below):
+    merge(part: any, config?: MergeConfig): Immutable<T>;
+
+    update(property: string, updaterFunction: (value: any, ...additionalParamters: any[]) => any, ...additionalArguments: any[]): Immutable<T>;
+    updateIn(propertyPath: Array<string>, updaterFunction: (value: any, ...additionalParamters: any[]) => any, ...additionalArguments: any[]): Immutable<T>;
+
+    without(property: string): Immutable<any>;
+    without(...properties: string[]): Immutable<any>;
+    without(filter: (value: any, key: string) => boolean): Immutable<any>;
   }
 
   export interface ImmutableArray<T> {

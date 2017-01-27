@@ -46,7 +46,7 @@ export function quotesReducer(state: Quotes = INITIAL_QUOTES_STATE, action: IAct
             total: oldState.total,
             isLoading: oldState.isLoading
           };
-        }) as any; // :-(
+        });
 
     case QuotesActions.RESET_INDEX:
       return state.setIn(['meta', 'index'], 0);
