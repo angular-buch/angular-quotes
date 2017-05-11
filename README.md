@@ -2,13 +2,13 @@
 
 [![Screenshot](screenshot.png)](https://angular-buch.com/angular-quotes/)
 
-This is just a little demo to get used with the Angular bindings for [Redux](https://github.com/reactjs/redux) ([ng2-redux](https://github.com/angular-redux/ng2-redux)).
+This is just a little demo to get used with the Angular bindings for [Redux](https://github.com/reactjs/redux) ([angular-redux](https://github.com/angular-redux/store)).
 
 # seamless-immutable library instead of immutable.js
 
 This version uses [seamless-immutable](https://github.com/rtfeldman/seamless-immutable) with type definitions.
 Seamless-immutable offers better JS interoperability and compatiblity with TypeScript.
-It ensures immutability all the way dow, see this issue on [Github](https://github.com/facebook/immutable-js/issues/473),
+It ensures immutability all the way down, see this issue on [Github](https://github.com/facebook/immutable-js/issues/473),
 
 So you can rely on immutable things being actually immutable.
 It does not allow any mutable objects inside -- which would break things on strange places.

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { select } from 'ng2-redux';
+import { select } from '@angular-redux/store';
 
 import { QuotesActions } from '../actions/quotes.actions';
 import { IAppState, IMeta, IQuote } from './../reducers/types';

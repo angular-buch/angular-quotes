@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { NgRedux } from 'ng2-redux';
+import { NgRedux } from '@angular-redux/store';
 
 import { IAppState } from './../reducers/types';
 import { QuotesService } from '../shared/quotes.service';

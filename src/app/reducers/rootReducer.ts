@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux-seamless-immutable';
-import { routerReducer } from 'ng2-redux-router';
+import { routerReducer } from '@angular-redux/router';
 import { quotesReducer } from './quotes.reducer';
 import { IAppState } from './types';
 

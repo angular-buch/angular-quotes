@@ -2,8 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 
-import { NgReduxModule, DevToolsExtension } from 'ng2-redux';
-import { NgReduxRouter } from 'ng2-redux-router';
+import { NgReduxModule, NgRedux, DevToolsExtension } from '@angular-redux/store';
+import { NgReduxRouterModule, NgReduxRouter } from '@angular-redux/router';
+
+import { rootReducer } from './reducers/rootReducer';
+import { IAppState } from './reducers/types';
+import { middleware, enhancers } from './app.extensibility';
+
 
 import { AppComponent } from './app.component';
 import { AboutPageComponent } from './components/about-page.component';
@@ -25,13 +30,30 @@ import { AppRoutesModule } from './app.routes';
     HttpModule,
     NgReduxModule,
     AppRoutesModule,
+    NgReduxModule,
+    NgReduxRouterModule
   ],
   providers: [
     DevToolsExtension,
-    NgReduxRouter,
     QuotesActions,
     QuotesService
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(
+    ngRedux: NgRedux<IAppState>,
+    ngReduxRouter: NgReduxRouter,
+    devTools: DevToolsExtension) {
+
+    ngRedux.configureStore(
+      rootReducer,
+      {} as IAppState,
+      [], // middlewares
+      devTools.isEnabled() ? [...enhancers, devTools.enhancer()] : enhancers
+    );
+
+    ngReduxRouter.initialize();
+  }
+
+}
