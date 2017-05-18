@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build": "ng build --base-href /angular-quotes/"
+    "build": "ng build && echo angular-quotes.angular-buch.com > dist/CNAME"
   },
   "private": true,
   "dependencies": {
